@@ -8,12 +8,12 @@ li {
 }
 
 body {
-    background-color: #dae5e9; /* Azul claro */
+    background-color: #eaeff1; /* Azul claro */
     color: #000000; /* Preto, cor padrão do texto */
 }
 
 h1 {
-    color: #FFFF00; /* Amarelo */
+    color: #1334f0f5; /* Amarelo */
 }
 
 #error-message {
@@ -29,4 +29,28 @@ h1 {
 
 #error-message p {
     margin: 10px 0; /* Adiciona espaçamento entre parágrafos */
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 250px; /* Aumenta o tamanho máximo do campo de pesquisa */
+    padding: 15px; /* Aumenta o preenchimento interno do campo de pesquisa */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px; /* Aumenta o tamanho da fonte no campo de pesquisa */
+}
+
+button {
+    padding: 15px 25px; /* Aumenta o preenchimento interno do botão */
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 20px; /* Aumenta o tamanho da fonte no botão */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
