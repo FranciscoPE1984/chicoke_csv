@@ -1,0 +1,32 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: #dae5e9; /* Azul claro */
+    color: #000000; /* Preto, cor padrão do texto */
+}
+
+h1 {
+    color: #FFFF00; /* Amarelo */
+}
+
+#error-message {
+    background-color: #f8d7da; /* Cor de fundo suave para destacar a mensagem */
+    color: #721c24; /* Cor do texto para a mensagem de erro */
+    border: 1px solid #f5c6cb; /* Borda para destacar a mensagem */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+    line-height: 1.8; /* Aumenta o espaçamento entre linhas */
+}
+
+#error-message p {
+    margin: 10px 0; /* Adiciona espaçamento entre parágrafos */
+}
