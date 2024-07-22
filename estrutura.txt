@@ -1,0 +1,9 @@
+pagina_karaoke_3/
+├── app.py
+├── Procfile
+├── requirements.txt
+├── static/
+│   └── scripts.js
+├── templates/
+│   └── index.html
+└── musicas.csv
