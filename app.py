@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, send_from_directory
 import pandas as pd
+from unidecode import unidecode
 
 app = Flask(__name__)
 
@@ -21,11 +22,17 @@ def search():
     if not query:
         return jsonify({'error': 'Query parameter is required'}), 400
 
-    # Filtrar o DataFrame com base na consulta
-    results = df[df.apply(lambda row: query.lower() in row['titulo'].lower() or query.lower() in row['interprete'].lower(), axis=1)]
+    # Normalizar a consulta removendo acentuação e convertendo para minúsculas
+    normalized_query = unidecode(query.lower())
+
+    # Filtrar o DataFrame com base na consulta normalizada
+    results = df[df.apply(lambda row: normalized_query in unidecode(row['titulo'].lower()) or normalized_query in unidecode(row['interprete'].lower()), axis=1)]
 
     # Converter o DataFrame filtrado para uma lista de dicionários
     results = results.to_dict(orient='records')
+
+    if not results:
+        return jsonify({'message': 'Nenhum cantor ou música encontrado! Tente novamente como parte do nome do cantor ou música. Atente para o nome correto do cantor ou música.'})
 
     return jsonify(results)
 
