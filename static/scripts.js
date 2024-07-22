@@ -13,7 +13,7 @@ document.getElementById('searchForm').addEventListener('submit', function (event
                 errorMessageDiv.className = 'error-message';
                 errorMessageDiv.innerHTML = `
                     <p>Nenhum cantor ou música encontrados!</p>
-                    <p>Tente novamente como parte do nome do cantor ou música!</p>
+                    <p>Tente novamente com parte do nome do cantor ou música!</p>
                     <p>Atente para o nome correto do cantor ou música!</p>
                 `;
                 resultsDiv.appendChild(errorMessageDiv);
