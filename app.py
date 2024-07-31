@@ -22,8 +22,8 @@ def search():
     if not query:
         return jsonify({'error': 'Query parameter is required'}), 400
 
-    # Normalizar a consulta removendo acentuação e convertendo para minúsculas
-    normalized_query = unidecode(query.lower())
+    # Normalizar a consulta removendo acentuação, convertendo para minúsculas e removendo espaços em branco ao redor
+    normalized_query = unidecode(query.lower().strip())
 
     # Filtrar o DataFrame com base na consulta normalizada
     results = df[df.apply(lambda row: normalized_query in unidecode(row['titulo'].lower()) or normalized_query in unidecode(row['interprete'].lower()), axis=1)]
@@ -37,5 +37,6 @@ def search():
     return jsonify(results)
 
 if __name__ == '__main__':
+    #app.run(debug=True)
     # Configuração para rodar o Flask em todas as interfaces de rede e na porta 80
     app.run(host='0.0.0.0', port=80, debug=True)
