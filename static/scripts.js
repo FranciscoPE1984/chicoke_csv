@@ -1,7 +1,8 @@
 document.getElementById('searchForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const query = document.getElementById('query').value;
+    // Remover espaços em branco ao redor da consulta de pesquisa
+    const query = document.getElementById('query').value.trim();
     fetch(`/search?query=${encodeURIComponent(query)}`)
         .then(response => response.json())
         .then(data => {
